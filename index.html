@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messi and Ronaldo</title>
+    <title>Messi vs Ronaldo - The Ultimate Comparison</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #f5f5f5;
             margin: 0;
             padding: 0;
         }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 24px 0 16px 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 12px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 32px auto;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            padding: 40px;
         }
         h1 {
             text-align: center;
             color: #222;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
         }
         .players {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             justify-content: center;
             margin-top: 32px;
         }
@@ -33,12 +58,12 @@
             background: #eaeaea;
             border-radius: 8px;
             padding: 24px;
-            width: 300px;
+            width: 350px;
             text-align: center;
         }
         .player img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 16px;
@@ -50,23 +75,244 @@
         .player p {
             color: #555;
         }
+        .section {
+            margin-top: 48px;
+        }
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+        .stats-table th, .stats-table td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        .stats-table th {
+            background: #f0f0f0;
+        }
+        .gallery {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .gallery img {
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .timeline {
+            margin-top: 32px;
+            padding-left: 24px;
+        }
+        .timeline-event {
+            margin-bottom: 18px;
+        }
+        .compare {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .compare-box {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 24px;
+            width: 350px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 48px;
+        }
     </style>
+    <script>
+        function showStats(player) {
+            document.getElementById('stats-messi').style.display = player === 'messi' ? 'table-row-group' : 'none';
+            document.getElementById('stats-ronaldo').style.display = player === 'ronaldo' ? 'table-row-group' : 'none';
+        }
+        function showAwards(player) {
+            document.getElementById('awards-messi').style.display = player === 'messi' ? 'table-row-group' : 'none';
+            document.getElementById('awards-ronaldo').style.display = player === 'ronaldo' ? 'table-row-group' : 'none';
+        }
+    </script>
 </head>
 <body>
+    <header>
+        <h1>Messi vs Ronaldo</h1>
+        <p>The Ultimate Football Legends Comparison</p>
+    </header>
+    <nav>
+        <a href="#biography">Biography</a>
+        <a href="#stats">Career Stats</a>
+        <a href="#awards">Awards</a>
+        <a href="#compare">Comparison</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#timeline">Timeline</a>
+    </nav>
     <div class="container">
-        <h1>Messi &amp; Ronaldo</h1>
-        <div class="players">
-            <div class="player">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_of_Lionel_Messi.jpg" alt="Lionel Messi">
-                <h2>Lionel Messi</h2>
-                <p>Argentinian footballer, widely regarded as one of the greatest players of all time. Winner of multiple Ballon d'Or awards and known for his incredible dribbling, vision, and goal-scoring ability.</p>
+        <section id="biography" class="section">
+            <h2>Biographies</h2>
+            <div class="players">
+                <div class="player">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_of_Lionel_Messi.jpg" alt="Lionel Messi">
+                    <h2>Lionel Messi</h2>
+                    <p><strong>Born:</strong> June 24, 1987 (Rosario, Argentina)<br>
+                    <strong>Position:</strong> Forward<br>
+                    <strong>Clubs:</strong> Barcelona, Paris Saint-Germain, Inter Miami<br>
+                    <strong>National Team:</strong> Argentina<br>
+                    Lionel Messi is renowned for his dribbling, vision, and playmaking. He spent most of his career at FC Barcelona, winning numerous titles and breaking records. Messi led Argentina to Copa America and World Cup glory.</p>
+                </div>
+                <div class="player">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo">
+                    <h2>Cristiano Ronaldo</h2>
+                    <p><strong>Born:</strong> February 5, 1985 (Funchal, Portugal)<br>
+                    <strong>Position:</strong> Forward<br>
+                    <strong>Clubs:</strong> Sporting CP, Manchester United, Real Madrid, Juventus, Al Nassr<br>
+                    <strong>National Team:</strong> Portugal<br>
+                    Cristiano Ronaldo is celebrated for his athleticism, finishing, and leadership. He has excelled in multiple leagues, winning titles and setting goal-scoring records. Ronaldo led Portugal to Euro and Nations League triumphs.</p>
+                </div>
             </div>
-            <div class="player">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo">
-                <h2>Cristiano Ronaldo</h2>
-                <p>Portuguese footballer, celebrated for his athleticism, finishing, and leadership. Ronaldo has won numerous Ballon d'Or awards and is one of the top goal scorers in football history.</p>
+        </section>
+        <section id="stats" class="section">
+            <h2>Career Stats</h2>
+            <div style="text-align:center; margin-bottom:16px;">
+                <button onclick="showStats('messi')" style="padding:10px 24px; margin-right:12px; border-radius:6px; border:none; background:#222; color:#fff; cursor:pointer;">Messi Stats</button>
+                <button onclick="showStats('ronaldo')" style="padding:10px 24px; border-radius:6px; border:none; background:#333; color:#fff; cursor:pointer;">Ronaldo Stats</button>
             </div>
-        </div>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Club Goals</th>
+                        <th>International Goals</th>
+                        <th>Appearances</th>
+                        <th>Assists</th>
+                    </tr>
+                </thead>
+                <tbody id="stats-messi" style="display:table-row-group;">
+                    <tr>
+                        <td>Messi</td>
+                        <td>820+</td>
+                        <td>106+</td>
+                        <td>1100+</td>
+                        <td>350+</td>
+                    </tr>
+                </tbody>
+                <tbody id="stats-ronaldo" style="display:none;">
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>870+</td>
+                        <td>128+</td>
+                        <td>1200+</td>
+                        <td>230+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="awards" class="section">
+            <h2>Major Awards</h2>
+            <div style="text-align:center; margin-bottom:16px;">
+                <button onclick="showAwards('messi')" style="padding:10px 24px; margin-right:12px; border-radius:6px; border:none; background:#222; color:#fff; cursor:pointer;">Messi Awards</button>
+                <button onclick="showAwards('ronaldo')" style="padding:10px 24px; border-radius:6px; border:none; background:#333; color:#fff; cursor:pointer;">Ronaldo Awards</button>
+            </div>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Ballon d'Or</th>
+                        <th>FIFA Best</th>
+                        <th>Golden Boot</th>
+                        <th>Champions League</th>
+                    </tr>
+                </thead>
+                <tbody id="awards-messi" style="display:table-row-group;">
+                    <tr>
+                        <td>Messi</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tbody id="awards-ronaldo" style="display:none;">
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="compare" class="section">
+            <h2>Messi vs Ronaldo: Head-to-Head</h2>
+            <div class="compare">
+                <div class="compare-box">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li><strong>Messi:</strong> Dribbling, Vision, Passing, Free Kicks</li>
+                        <li><strong>Ronaldo:</strong> Finishing, Heading, Athleticism, Leadership</li>
+                    </ul>
+                </div>
+                <div class="compare-box">
+                    <h3>Records</h3>
+                    <ul>
+                        <li>Most goals in UEFA Champions League: Ronaldo</li>
+                        <li>Most assists in La Liga: Messi</li>
+                        <li>Most international goals: Ronaldo</li>
+                        <li>Most Ballon d'Or: Messi</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="section">
+            <h2>Gallery & Videos</h2>
+            <div class="gallery">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Messi_vs_Ronaldo.jpg" alt="Messi vs Ronaldo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Messi_celebrating.jpg" alt="Messi Celebrating">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ronaldo_celebrating.jpg" alt="Ronaldo Celebrating">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Messi_Ronaldo_together.jpg" alt="Messi and Ronaldo Together">
+            </div>
+            <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:32px;">
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/1wVho3I0NtU" title="Messi Best Goals" frameborder="0" allowfullscreen></iframe>
+                    <div style="text-align:center; margin-top:8px;">Messi Best Goals</div>
+                </div>
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/3Xg4gQfQw8E" title="Ronaldo Best Goals" frameborder="0" allowfullscreen></iframe>
+                    <div style="text-align:center; margin-top:8px;">Ronaldo Best Goals</div>
+                </div>
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/2QZQ2rj6b9A" title="Messi vs Ronaldo Skills" frameborder="0" allowfullscreen></iframe>
+                    <div style="text-align:center; margin-top:8px;">Messi vs Ronaldo Skills</div>
+                </div>
+            </div>
+        </section>
+        <section id="timeline" class="section">
+            <h2>Career Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-event"><strong>2003:</strong> Ronaldo joins Manchester United</div>
+                <div class="timeline-event"><strong>2004:</strong> Messi debuts for Barcelona</div>
+                <div class="timeline-event"><strong>2008:</strong> Ronaldo wins first Ballon d'Or</div>
+                <div class="timeline-event"><strong>2009:</strong> Ronaldo joins Real Madrid</div>
+                <div class="timeline-event"><strong>2012:</strong> Messi scores 91 goals in a calendar year</div>
+                <div class="timeline-event"><strong>2016:</strong> Ronaldo wins Euro with Portugal</div>
+                <div class="timeline-event"><strong>2021:</strong> Messi wins Copa America with Argentina</div>
+                <div class="timeline-event"><strong>2022:</strong> Messi wins FIFA World Cup with Argentina</div>
+            </div>
+        </section>
     </div>
+    <footer>
+        &copy; 2025 Messi vs Ronaldo | Football Legends Comparison
+    </footer>
 </body>
 </html>
